@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  # Serwer Apache, który będzie wyświetlał stronę HTML
+  server:
+    build: ./server
+    container_name: apache-server
+    networks:
+      - mynetwork
+    ports:
+      - "8080:80"
+    volumes:
+      - ./server/index.html:/var/www/html/index.html
+
+  # Klient, który będzie próbował połączyć się z serwerem Apache
+  client:
+    build: ./client
+    container_name: client
+    networks:
+      - mynetwork
+    depends_on:
+      - server
+    entrypoint: ["curl", "server:80"]  # Komenda, która testuje połączenie z serwerem
+
+networks:
+  mynetwork:
+    driver: bridge
