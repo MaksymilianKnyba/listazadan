@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s  # Jak często zbierać metryki
+
+scrape_configs:
+  - job_name: 'apache-server'
+    static_configs:
+      - targets: ['server:80']
+  - job_name: 'mysql'
+    static_configs:
+      - targets: ['db:3307']
