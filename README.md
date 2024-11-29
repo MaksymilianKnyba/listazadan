@@ -19,3 +19,4 @@ Ten projekt pokazuje, jak skonfigurować sieć Dockerową oraz uruchomić dwa ko
    docker-compose up --build
 ## http://localhost:8080
    docker logs client
+# listazadan
