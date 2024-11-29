@@ -8,15 +8,17 @@ Ten projekt pokazuje, jak skonfigurować sieć Dockerową oraz uruchomić dwa ko
 
 - Docker
 - Docker Compose
+- python
+- flask
 
 ## Uruchomienie projektu
 
 1. Sklonuj to repozytorium:
 
    ```bash
-   git clone https://github.com/MaksymilianKnyba/docker-demo.git
+   git clone https://github.com/MaksymilianKnyba/listazadan.git
    cd docker-demo
    docker-compose up --build
-## http://localhost:8080
-   docker logs client
+## http://localhost:5000
+   strona z listą zadan
 # listazadan
