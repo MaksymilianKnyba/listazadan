@@ -21,4 +21,10 @@ Ten projekt pokazuje, jak skonfigurować sieć Dockerową oraz uruchomić dwa ko
    docker-compose up --build
 ## http://localhost:5000
    strona z listą zadan
-# listazadan
+## http://localhost:8081 
+   serwer apache
+## http://localhost:3000
+   grafan
+## http://localhost:9090
+   prometheus
+# lista zadan
