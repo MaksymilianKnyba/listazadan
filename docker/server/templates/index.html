@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Zadań</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .task { margin: 10px 0; }
+        .done { text-decoration: line-through; color: gray; }
+        button { margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Lista Zadań</h1>
+    <form action="/add" method="post">
+        <input type="text" name="task" placeholder="Nowe zadanie" required>
+        <button type="submit">Dodaj</button>
+    </form>
+    <ul>
+        {% for task in tasks %}
+        <li class="task">
+            <span class="{{ 'done' if task.done }}">{{ task.task }}</span>
+            <a href="/complete/{{ loop.index0 }}"><button>Oznacz jako ukończone</button></a>
+            <a href="/delete/{{ loop.index0 }}"><button>Usuń</button></a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
